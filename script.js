@@ -83,7 +83,7 @@ function render() {
     checkbox.className = "check";
     checkbox.checked = isDone;
 
-    // Toggle checkbox directly without following the link
+ 
     checkbox.addEventListener("change", () => {
       toggleCompleted(game.id);
       row.classList.toggle("done", checkbox.checked);
@@ -97,7 +97,7 @@ function render() {
     link.rel = "noopener noreferrer";
     link.textContent = game.name;
 
-    // Clicking the link marks as completed
+ 
     link.addEventListener("click", () => {
       markCompleted(game.id);
       row.classList.add("done");
