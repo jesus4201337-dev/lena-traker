@@ -9,10 +9,11 @@ const games = [
   { id: "krillion", name: "Krillion", url: "https://krillion.io/" },
   { id: "100hitow", name: "100 Hitów", url: "https://100hitow.pl/daily" },
   { id: "wordle", name: "Wordle", url: "https://www.nytimes.com/games/wordle/index.html" },
-  { id: "connections", name: "Connections", url: "https://www.nytimes.com/games/connections" }
+  { id: "connections", name: "Connections", url: "https://www.nytimes.com/games/connections" },
+  { id: "whodunchat", name: "WhoDunChat", url: "https://whodunchat.ducksaint.com/" }
 ];
 
-const STORAGE_KEY = "dle-tracker-v2";
+const STORAGE_KEY = "dle-tracker-v3";
 
 function getPolandDate() {
   return new Intl.DateTimeFormat("en-CA", {
@@ -83,7 +84,6 @@ function render() {
     checkbox.className = "check";
     checkbox.checked = isDone;
 
- 
     checkbox.addEventListener("change", () => {
       toggleCompleted(game.id);
       row.classList.toggle("done", checkbox.checked);
@@ -97,7 +97,6 @@ function render() {
     link.rel = "noopener noreferrer";
     link.textContent = game.name;
 
- 
     link.addEventListener("click", () => {
       markCompleted(game.id);
       row.classList.add("done");
