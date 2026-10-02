@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --minion-yellow: #fce029;
+  --minion-blue: #225f88;
+  --minion-dark: #2c2c2c;
+  --minion-card-bg: rgba(255, 255, 255, 0.7);
+  --minion-gray-text: #60707b;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #FFE242;
+  color: var(--minion-dark);
+  background-image: url('image_0.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+}
+
+.container {
+  width: min(800px, calc(100% - 24px));
+  margin: 40px auto;
+  background: var(--minion-card-bg);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: none;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--minion-blue);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--minion-dark);
+}
+
+#countdown {
+  font-variant-numeric: tabular-nums;
+  background: var(--minion-yellow);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 2px solid var(--minion-dark);
+}
+
+#progress {
+  display: flex;
+  align-items: center;
+  background: var(--minion-blue);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.games {
+  display: flex;
+  flex-direction: column;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.2s ease;
+  padding: 0 8px;
+}
+
+.game:hover {
+  background-color: rgba(252, 224, 41, 0.3);
+  border-radius: 8px;
+}
+
+.check {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--minion-blue);
+  cursor: pointer;
+}
+
+.game-link {
+  color: var(--minion-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 16px 0;
+  transition: color 0.2s ease;
+}
+
+.game-link:hover {
+  color: var(--minion-blue);
+}
+
+.game.done .game-link {
+  color: var(--minion-gray-text);
+  text-decoration: line-through;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 16px);
+    margin: 12px auto;
+    padding: 20px 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
